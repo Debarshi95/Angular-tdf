@@ -129,7 +129,9 @@
       </div>
     </div>
     <div class="form-group">
-      <button class="btn btn-primary">Submit</button>
+      <button [disabled]="userForm.invalid" class="btn btn-primary">
+        Submit
+      </button>
     </div>
   </form>
 </div>
