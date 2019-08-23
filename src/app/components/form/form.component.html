@@ -16,6 +16,11 @@
           [class.is-invalid]="firstname.touched && firstname.invalid"
           required
         />
+        <small
+          class="text-danger"
+          [class.d-none]="firstname.untouched || firstname.valid"
+          >Firstname is required</small
+        >
       </div>
     </div>
     <div class="form-group row">
