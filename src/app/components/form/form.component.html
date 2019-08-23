@@ -1,0 +1,130 @@
+<div class="w-50 mx-auto mt-5">
+  {{ userForm.value | json }}
+  <hr />
+  {{ user | json }}
+  <form #userForm="ngForm">
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Firstname</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          #firstname="ngModel"
+          [(ngModel)]="user.firstname"
+          name="firstname"
+          placeholder="Firstname"
+          [class.is-invalid]="firstname.touched && firstname.invalid"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Lastname</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          #lastname="ngModel"
+          [(ngModel)]="user.lastname"
+          name="lastname"
+          placeholder="Lastname"
+          [class.is-invalid]="lastname.touched && lastname.invalid"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-10">
+        <input
+          type="email"
+          class="form-control"
+          #email="ngModel"
+          [(ngModel)]="user.email"
+          name="email"
+          placeholder="Email"
+          [class.is-invalid]="email.touched && email.invalid"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Password</label>
+      <div class="col-sm-10">
+        <input
+          type="password"
+          class="form-control"
+          #password="ngModel"
+          name="password"
+          [(ngModel)]="user.password"
+          placeholder="Password"
+          [class.is-invalid]="password.touched && password.invalid"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Choice</label>
+      <div class="col-sm-10">
+        <select
+          class="form-control"
+          #choice="ngModel"
+          [(ngModel)]="user.choice"
+          name="choice"
+          [class.is-invalid]="choice.touched && choice.invalid"
+          required
+        >
+          <option disabled>Please select a value</option>
+          <option value="react">React</option>
+          <option value="angular">Angular</option>
+          <option value="vue">Vue</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">UserType</label>
+      <div class="col-sm-10 mt-2">
+        <div class="custom-control custom-radio custom-control-inline">
+          <input
+            type="radio"
+            #usertype="ngModel"
+            id="developer"
+            name="usertype"
+            value="developer"
+            [(ngModel)]="user.usertype"
+            class="custom-control-input"
+            [class.is-invalid]="usertype.touched && usertype.invalid"
+          />
+          <label class="custom-control-label" for="developer">Developer</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input
+            type="radio"
+            id="student"
+            name="usertype"
+            [(ngModel)]="user.usertype"
+            value="student"
+            class="custom-control-input"
+            [class.is-invalid]="usertype.touched && usertype.invalid"
+          />
+          <label class="custom-control-label" for="student">Student</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="custom-control custom-checkbox">
+        <input
+          type="checkbox"
+          class="custom-control-input"
+          id="subscribe"
+          name="subscribe"
+          [(ngModel)]="user.subscribe"
+        />
+        <label class="custom-control-label" for="subscribe">Subscribe</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>
