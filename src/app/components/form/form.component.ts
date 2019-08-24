@@ -7,7 +7,10 @@ import { User } from "src/app/user";
   styleUrls: ["./form.component.css"]
 })
 export class FormComponent implements OnInit {
-  user = new User("Dev", "Bhatt", "", "", "", "", true);
+  user = new User("", "", "", "", "", "", true);
+  submitForm(): void {
+    console.log(this.user);
+  }
   constructor() {}
 
   ngOnInit() {}
